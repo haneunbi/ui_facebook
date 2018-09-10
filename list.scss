@@ -1,0 +1,223 @@
+$body_background-color: #e9ebee;
+$color: #365899;
+$color_bk: #1d2129;
+$font-size: 14px;
+$font-size_sm: 12px;
+$line-height: 1.38;
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $color_bk;
+  font-size: $font-size;
+  line-height: $line-height;
+  background-color: $body_background-color;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: $color;
+  cursor: pointer;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+p {
+  margin: 0;
+}
+input {
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+}
+input:focus {
+  outline: 0;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.list_post {
+  width: 100%;
+  max-width: 540px;
+  .thumb {
+    float: left;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    overflow: hidden;
+    a {
+      display: block;
+    }
+  }
+  .writer {
+    font-size: $font-size;
+    a {
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .post {
+    margin: 12px;
+    background-color: #fff;
+    border: 1px solid #dddfe2;
+    border-radius: 3px;
+    .top {
+      padding: 12px;
+      @extend .clearfix;
+      .thumb {
+
+      }
+      .info {
+        float: left;
+        margin-left: 8px;
+        .writer {
+
+        }
+        .date {
+          margin-top: 2px;
+          color: #616770;
+          font-size: $font-size_sm;
+        }
+      }
+    }
+    .content {
+      padding: 12px;
+      p {
+
+      }
+    }
+    .comment_count {
+      padding: 0 12px 12px;
+      text-align: right;
+      a {
+        color: #90949c;
+        font-size: 13px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+    .reaction {
+      display: flex;
+      flex-direction: row;
+      margin: 0 12px;
+      padding: 4px 0;
+      border-top: 1px solid #e5e5e5;
+      span {
+        display: flex;
+        flex: 1 100%;
+        height: 32px;
+        &.like.on {
+          a {
+            color: rgb(53, 120, 229);
+          }
+        }
+      }
+      a {
+        display: flex;
+        flex: 1 100%;
+        padding: 0 2px;
+        color: #616770;
+        font-size: 13px;
+        font-weight: 600;
+        align-items: center;
+        justify-content: center;
+      }
+      a:hover {
+        background-color: rgba(29, 33, 41, .04);
+        border-radius: 2px;
+      }
+    }
+    .comment {
+      border-top: 1px solid #eff0f1;
+      padding: 8px 12px 4px;
+      li {
+        @extend .clearfix;
+        .co_thumb {
+          @extend .thumb;
+          width: 30px;
+          height: 30px;
+        }
+        .wrap_co_content {
+          float: left;
+          margin-left: 6px;
+          .co_content {
+            padding: 8px 10px;
+            background-color: #eff1f3;
+            font-size: 13px;
+            line-height: 16px;
+            border-radius: 18px;
+            .writer {
+              font-size: 13px;
+            }
+          }
+          .co_reaction {
+            margin-left: 10px;
+            margin-bottom: 3px;
+            padding-top: 3px;
+            color: #90949c;
+            font-size: 12px;
+            line-height: 12px;
+            a:hover {
+              text-decoration: underline;
+            }
+            .datetime {
+              color: #616770;
+            }
+          }
+        }
+      }
+    }
+    .comment + .write_comment {
+      border-top: 0;
+      padding: 5px 12px 8px;
+    }
+    .write_comment {
+      padding: 8px 12px;
+      border-top: 1px solid #eff0f1;
+      @extend .clearfix;
+      .wr_thumb {
+        @extend .thumb;
+        width: 30px;
+        height: 30px;
+      }
+      .wrap_wr_content {
+        float: left;
+        margin-left: 6px;
+        width: calc(100% - 38px);
+        .wr_content {
+          border: 1px solid #ccd0d5;
+          padding: 7px 10px;
+          background-color: #eff1f3;
+          font-size: 13px;
+          line-height: 16px;
+          border-radius: 18px;
+          input {
+            width: 100%;
+            background-color: transparent;
+          }
+          input::placeholder {
+            color: #8d949e;
+          }
+        }
+      }
+    }
+  }
+}
